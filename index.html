@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muktadir Shihab | Freelancer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+        #caveat-sign {
+            font-family: "Caveat", cursive;
+            font-size: x-large;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Top Navbar (sticky) -->
+    <header class="top-nav fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-4 upore">
+                <button id="menu-toggle" class="md:hidden p-2 rounded-md">
+                    <!-- simple hamburger for small screens to focus side nav if desired -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <!-- Desktop sidebar toggle: visible on md+ -->
+                <button id="sidebar-toggle" class="hidden md:inline-flex p-2 rounded-md" aria-label="Open sidebar"
+                    aria-expanded="false">
+                    <!-- morphing icon: three simple paths that will be interpolated via JS -->
+                    <svg id="sidebar-toggle-svg" class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="none">
+                        <path id="sbar-p1" d="M4 7 L20 7" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" />
+                        <path id="sbar-p2" d="M4 12 L20 12" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" />
+                        <path id="sbar-p3" d="M4 17 L20 17" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" />
+                    </svg>
+                    <span class="sr-only" id="sidebar-toggle-label">Open sidebar</span>
+                </button>
+                <a href="index.html" class="text-lg font-bold" id="caveat-sign">Shihab</a>
+            </div>
+
+
+
+            <div class="flex items-center gap-3 upore">
+                <a href="auth/signin.html" class="text-sm text-slate-700 hover:underline">Sign in</a>
+                <a href="auth/login.html"
+                    class="px-3 py-1 rounded-md bg-teal-600 text-white text-sm hover:bg-teal-700">Log in</a>
+            </div>
+        </div>
+        <!-- centered bismillah (non-interactive) -->
+        <div class="nav-center-text">
+            <span class="bismillah">بِسْمِ ٱللّٰهِ ٱلرَّحْمٰنِ ٱلرَّحِيمِ</span>
+        </div>
+        <!-- Mobile dropdown menu (for small screens) -->
+        <div class="mobile-menu">
+            <nav class="flex flex-col gap-2">
+                <a href="#projects" class="px-3 py-2 rounded-md hover:bg-slate-50">Projects</a>
+                <a href="#skills" class="px-3 py-2 rounded-md hover:bg-slate-50">Skills</a>
+                <a href="#about" class="px-3 py-2 rounded-md hover:bg-slate-50">About</a>
+                <a href="#contact" class="px-3 py-2 rounded-md hover:bg-slate-50">Contact</a>
+                <div class="border-t mt-2 pt-2">
+                    <a href="auth/signin.html" class="block px-3 py-2 text-sm">Sign in</a>
+                    <a href="auth/login.html"
+                        class="block px-3 py-2 text-sm text-white bg-teal-600 rounded-md text-center">Log in</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Left sidebar (off-canvas) - will be toggled like the mobile menu on large screens -->
+    <!-- Inline styles below keep the sidebar/backdrop visually hidden until JS runs to avoid a flash on load -->
+    <aside id="side-nav" class="side-nav offcanvas" aria-hidden="true"
+        style="transform: translateX(-120%); visibility: hidden;">
+        <nav class="p-4">
+            <a href="#projects" class="block py-2 px-3 rounded hover:bg-slate-100">Projects</a>
+            <a href="#skills" class="block py-2 px-3 rounded hover:bg-slate-100">Skills</a>
+            <a href="#about" class="block py-2 px-3 rounded hover:bg-slate-100">About</a>
+            <a href="#contact" class="block py-2 px-3 rounded hover:bg-slate-100">Contact</a>
+        </nav>
+    </aside>
+    <!-- Backdrop starts hidden (display:none) to avoid awkward scrollbar/overlay flash before JS initializes -->
+    <div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"
+        style="display:none; visibility:hidden; opacity:0;"></div>
+
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+            <h2 class="text-4xl md:text-5xl font-bold leading-tight">Hi, I'm <span class="text-teal-600">Muktadir Shihab
+                    Gazi</span></h2>
+            <p class="mt-4 text-lg">Freelance Web & Data Analyst helping clients turn data into decisions.</p>
+            <div class="mt-6 flex gap-4">
+                <a href="#contact" class="px-6 py-3 bg-teal-600 text-white rounded-xl shadow hover:bg-teal-700">Hire
+                    Me</a>
+                <a href="#projects"
+                    class="px-6 py-3 border border-teal-600 text-teal-600 rounded-xl hover:bg-teal-50">View Work</a>
+            </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6">
+            <p class="text-sm text-slate-500">Featured Project</p>
+            <h3 class="text-xl font-semibold mt-2">Excel Automation Dashboard</h3>
+            <p class="mt-2 text-sm">Automated reporting system saving 10+ hours/week.</p>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="bg-white py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                <a href="skills/excel.html"
+                    class="p-4 rounded-xl bg-slate-50 flex flex-col items-center gap-3 transition transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-teal-200"
+                    role="link" aria-label="Excel">
+                    <img src="img/microsoft-excel-icon.svg" alt="Excel" class="w-12 h-12" />
+                    <span class="text-sm font-medium">Excel</span>
+                </a>
+
+                <a href="skills/power-bi.html"
+                    class="p-4 rounded-xl bg-slate-50 flex flex-col items-center gap-3 transition transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-teal-200"
+                    role="link" aria-label="Power BI">
+                    <img src="img/power-bi-icon.svg" alt="Power BI" class="w-12 h-12" />
+                    <span class="text-sm font-medium">Power BI</span>
+                </a>
+
+                <a href="skills/powerpoint.html"
+                    class="p-4 rounded-xl bg-slate-50 flex flex-col items-center gap-3 transition transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-teal-200"
+                    role="link" aria-label="PowerPoint">
+                    <img src="img/microsoft-powerpoint-icon.svg" alt="PowerPoint" class="w-12 h-12" />
+                    <span class="text-sm font-medium">PowerPoint</span>
+                </a>
+
+                <a href="skills/python.html"
+                    class="p-4 rounded-xl bg-slate-50 flex flex-col items-center gap-3 transition transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-teal-200"
+                    role="link" aria-label="Python">
+                    <img src="img/icons8-python-64.png" alt="Python" class="w-12 h-12" />
+                    <span class="text-sm font-medium">Python</span>
+                </a>
+
+                <a href="skills/pandas.html"
+                    class="p-4 rounded-xl bg-slate-50 flex flex-col items-center gap-3 transition transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-teal-200"
+                    role="link" aria-label="Pandas">
+                    <img src="img/icons8-pandas-100.png" alt="Pandas" class="w-12 h-12" />
+                    <span class="text-sm font-medium">Pandas</span>
+                </a>
+
+                <a href="skills/matplotlib.html"
+                    class="p-4 rounded-xl bg-slate-50 flex flex-col items-center gap-3 transition transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-teal-200"
+                    role="link" aria-label="Matplotlib">
+                    <img src="img/icons8-matplotlib-100.svg" alt="Matplotlib" class="w-12 h-12" />
+                    <span class="text-sm font-medium">Matplotlib</span>
+                </a>
+
+                <a href="skills/numpy.html"
+                    class="p-4 rounded-xl bg-slate-50 flex flex-col items-center gap-3 transition transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-teal-200"
+                    role="link" aria-label="NumPy">
+                    <img src="img/icons8-numpy-100.png" alt="NumPy" class="w-12 h-12" />
+                    <span class="text-sm font-medium">NumPy</span>
+                </a>
+
+                <a href="skills/mongodb.html"
+                    class="p-4 rounded-xl bg-slate-50 flex flex-col items-center gap-3 transition transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-teal-200"
+                    role="link" aria-label="MongoDB">
+                    <img src="img/icons8-mongodb-64.svg" alt="MongoDB" class="w-12 h-12" />
+                    <span class="text-sm font-medium">MongoDB</span>
+                </a>
+
+                <a href="skills/sql.html"
+                    class="p-4 rounded-xl bg-slate-50 flex flex-col items-center gap-3 transition transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-teal-200"
+                    role="link" aria-label="SQL">
+                    <img src="img/icons8-database-100.png" alt="SQL" class="w-12 h-12" />
+                    <span class="text-sm font-medium">SQL</span>
+                </a>
+
+                <a href="skills/web-dev.html"
+                    class="p-4 rounded-xl bg-slate-50 flex flex-col items-center gap-3 transition transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-teal-200"
+                    role="link" aria-label="Web Development">
+                    <img src="img/icons8-website-100.png" alt="Website Development" class="w-12 h-12" />
+                    <span class="text-sm font-medium">Web Dev</span>
+                </a>
+
+                <a href="skills/content.html"
+                    class="p-4 rounded-xl bg-slate-50 flex flex-col items-center gap-3 transition transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-teal-200"
+                    role="link" aria-label="Content">
+                    <img src="img/play-video-clip-icon.svg" alt="Content Creation" class="w-12 h-12" />
+                    <span class="text-sm font-medium">Content</span>
+                </a>
+                <a href="skills/spss.html"
+                    class="p-4 rounded-xl bg-slate-50 flex flex-col items-center gap-3 transition transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-teal-200"
+                    role="link" aria-label="SPSS">
+                    <img style="width: 150px;" src="img/spss.svg" alt="SPSS" class="w-12 h-12" />
+                    <span class="text-sm font-medium">SPSS</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8">Projects</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow">
+                    <h3 class="font-semibold">Data Cleaning Tool</h3>
+                    <p class="text-sm mt-2">Automated messy Excel datasets.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow">
+                    <h3 class="font-semibold">Sales Dashboard</h3>
+                    <p class="text-sm mt-2">Interactive Power BI dashboard.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow">
+                    <h3 class="font-semibold">Python Scraper</h3>
+                    <p class="text-sm mt-2">Fast data extraction from web sources.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-teal-600 text-white py-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold">Let's Work Together</h2>
+            <p class="mt-4">Email: shihabgazi330@mail.com</p>
+            <p class="mt-4">WhatsApp: <a href="https://wa.me/8801783722571" target="_blank"
+                    class="text-white underline">+880 1783722571</a></p>
+            <p class="mt-4">LinkedIn: <a href="https://www.linkedin.com/in/muktadir-shihab-4a8317387"
+                    class="text-white underline" target="_blank">Muktadir Shihab Gazi</a></p>
+            <p class="mt-4">Facebook: <a href="https://www.facebook.com/muktadir.shihab.2025"
+                    class="text-white underline" target="_blank">Muktadir Shihab Gazi</a></p>
+            <a class="inline-block mt-6 px-6 py-3 bg-white text-teal-600 rounded-xl font-semibold"
+                href="mailto:shihabgazi330@mail.com">Contact Me</a>
+
+        </div>
+    </section>
+    <!-- Theme toggle (floating) -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" aria-pressed="false"
+        title="Toggle theme">
+        <!-- sun -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g class="icon-sun" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3" fill="currentColor" />
+                <path
+                    d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            </g>
+            <g class="icon-moon" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                fill="currentColor">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+            </g>
+        </svg>
+    </button>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+
+</html>
