@@ -1,0 +1,37 @@
+<svg width="900" height="300" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f77ff"/>
+      <stop offset="100%" stop-color="#0b4db8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Bar chart -->
+  <rect x="60" y="160" width="40" height="80" rx="6" fill="url(#blueGrad)"/>
+  <rect x="120" y="120" width="40" height="120" rx="6" fill="url(#blueGrad)"/>
+  <rect x="180" y="80" width="40" height="160" rx="6" fill="url(#blueGrad)"/>
+
+  <!-- Line chart -->
+  <polyline
+    points="60,170 140,130 200,100"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="4"
+  />
+  <circle cx="60" cy="170" r="5" fill="#ffffff"/>
+  <circle cx="140" cy="130" r="5" fill="#ffffff"/>
+  <circle cx="200" cy="100" r="5" fill="#ffffff"/>
+
+  <!-- Pie chart -->
+  <circle cx="260" cy="120" r="40" fill="#1f77ff"/>
+  <path d="M260 120 L260 80 A40 40 0 0 1 300 120 Z" fill="#ffffff"/>
+
+  <!-- Text -->
+  <text x="340" y="170"
+        font-size="120"
+        font-family="Segoe UI, Arial, sans-serif"
+        font-weight="700"
+        fill="#1f77ff">
+    SPSS
+  </text>
+</svg>

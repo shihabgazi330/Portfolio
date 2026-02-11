@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="72" height="72" role="img" aria-label="NumPy icon">
+  <title>NumPy</title>
+  <rect x="8" y="12" width="48" height="40" rx="6" fill="#fff" stroke="#e6eefb"/>
+  <g stroke="#7c6bff" stroke-width="1.6" fill="#f5f7ff">
+    <path d="M20 12v40M32 12v40M44 12v40M8 26h48M8 40h48" stroke-opacity="0.9"/>
+  </g>
+  <text x="18" y="50" fill="#7c6bff" font-size="9" font-weight="700">np</text>
+</svg>

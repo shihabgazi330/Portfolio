@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="72" height="72" role="img" aria-label="Database icon">
+  <title>Database</title>
+  <defs>
+    <linearGradient id="dbg" x1="0" x2="1">
+      <stop offset="0" stop-color="#eef2ff"/>
+      <stop offset="1" stop-color="#e6ebff"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="none">
+    <ellipse cx="32" cy="12" rx="18" ry="6" fill="url(#dbg)" />
+    <path d="M14 12v18c0 3.3 8 6 18 6s18-2.7 18-6V12z" fill="#f7f9ff"/>
+    <ellipse cx="32" cy="36" rx="18" ry="6" fill="#e6ebff" />
+    <rect x="12" y="38" width="40" height="8" rx="3" fill="#eef5ff"/>
+  </g>
+  <g stroke="#6b46ff" stroke-width="1.6" fill="none">
+    <ellipse cx="32" cy="12" rx="18" ry="6"/>
+    <path d="M14 12v18c0 3.3 8 6 18 6s18-2.7 18-6V12z"/>
+    <ellipse cx="32" cy="36" rx="18" ry="6"/>
+  </g>
+</svg>

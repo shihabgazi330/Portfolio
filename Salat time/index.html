@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaz Times</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Namaz Times</h1>
+        <p id="location">Detecting your location...</p>
+        <div id="prayer-times">
+            <p>Fajr: <span id="fajr"></span></p>
+            <p>Dhuhr: <span id="dhuhr"></span></p>
+            <p>Asr: <span id="asr"></span></p>
+            <p>Maghrib: <span id="maghrib"></span></p>
+            <p>Isha: <span id="isha"></span></p>
+        </div>
+    </div>
+
+    <!-- Load adhan first so our script can use the global `adhan` object -->
+    <script src="https://cdn.jsdelivr.net/npm/adhan@4.0.0/dist/adhan.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
