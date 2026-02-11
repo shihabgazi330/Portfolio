@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="72" height="72" role="img" aria-label="Pandas icon">
+  <title>Pandas / table</title>
+  <rect x="8" y="12" width="48" height="40" rx="6" fill="#fff" stroke="#e9f0ff"/>
+  <g stroke="#0f172a" stroke-width="1.4" fill="none">
+    <path d="M8 26h48M8 38h48M22 12v40" stroke-opacity="0.14"/>
+  </g>
+  <!-- subtle panda eyes hint -->
+  <circle cx="42" cy="20" r="2.5" fill="#111" opacity="0.88"/>
+  <circle cx="48" cy="20" r="2.5" fill="#111" opacity="0.88"/>
+</svg>

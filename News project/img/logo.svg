@@ -1,0 +1,33 @@
+<svg width="420" height="120" viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Transparent -->
+
+  <!-- Crescent -->
+  <path d="
+    M60 20
+    A40 40 0 1 0 60 100
+    A30 30 0 1 1 60 20
+  " fill="#0F766E"/>
+
+  <!-- Sound Waves -->
+  <path d="M85 45 Q95 60 85 75" stroke="#D4AF37" stroke-width="4" fill="none"/>
+  <path d="M95 40 Q110 60 95 80" stroke="#D4AF37" stroke-width="3" fill="none"/>
+  <path d="M105 35 Q125 60 105 85" stroke="#D4AF37" stroke-width="2" fill="none"/>
+
+  <!-- Brand Text -->
+  <text x="150" y="65"
+        font-size="36"
+        font-weight="700"
+        fill="#0B1F1A"
+        font-family="Playfair Display, serif">
+    Ummah
+    <tspan fill="#0F766E"> Voice</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="152" y="90"
+        font-size="14"
+        fill="#374151"
+        font-family="Inter, sans-serif">
+    Voice of the Global Ummah
+  </text>
+</svg>
