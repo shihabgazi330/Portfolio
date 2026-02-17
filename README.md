@@ -1,8 +1,4 @@
-Here is your **professional, recruiter-optimized `README.md`** with badges, preview section, and strong positioning for clients 👇
-
-You can copy this directly into your `README.md`.
-
----
+# بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
 
 # 🌐 Muktadir Shihab – Portfolio Website
 
